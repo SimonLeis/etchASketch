@@ -2,7 +2,8 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
-  let numberOfSquares = 16 * 16;
+  let wantedNumberOfSquares = 16;
+  let numberOfSquares = wantedNumberOfSquares * wantedNumberOfSquares;
 
   const createGrid = (numberOfSquares) => {
     for (let index = 0; index < numberOfSquares; index++) {
@@ -23,5 +24,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+  const paintBlack = (target) => {
+    target.style.backgroundColor = "black";
+  };
+
   createGrid(numberOfSquares);
+
+  document.addEventListener("mouseover", (e) => {
+    e.target;
+
+    switch (e.target.className) {
+      case "square":
+        paintBlack(e.target);
+        e.stopPropagation();
+        break;
+
+      default:
+        break;
+    }
+  });
 });
