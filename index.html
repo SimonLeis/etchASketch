@@ -29,11 +29,41 @@
         margin: 0;
         padding: 0;
       }
+
+      .submitBtnSquares {
+        margin: 0 auto;
+        height: 50px;
+        width: 200px;
+        background-color: rgb(0, 181, 241);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        display: block;
+
+        margin-top: 10px;
+      }
+
+      .inputSquares {
+        margin: 0 auto;
+        height: 50px;
+        width: 200px;
+
+        border: 2px solid rgb(0, 181, 241);
+        border-radius: 50px;
+        font-size: 1.3rem;
+        display: block;
+
+        text-align: center;
+      }
     </style>
   </head>
 
   <script src="./index.js" defer></script>
   <body>
+    <input class="inputSquares" type="number" max="100" placeholder="16" />
+    <button class="submitBtnSquares">Choose Pixelcount !</button>
+
     <div class="container"></div>
   </body>
 </html>

@@ -2,6 +2,9 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
+  const inputSquares = document.querySelector(".inputSquares");
+  inputSquares.value = "16";
+  const submitBtnSquares = document.querySelector(".submitBtnSquares");
   let wantedNumberOfSquares = 16;
   let numberOfSquares = wantedNumberOfSquares * wantedNumberOfSquares;
 
@@ -11,8 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
       div.classList.add("square");
       div.style.width = `${1000 / Math.sqrt(numberOfSquares) - 2}px`;
       div.style.height = `${1000 / Math.sqrt(numberOfSquares) - 2}px`;
-
-      console.log(div.style.width);
 
       container.appendChild(div);
     }
@@ -42,5 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
       default:
         break;
     }
+
+    submitBtnSquares.addEventListener("click", () => {
+      destroyGrid();
+      console.log(inputSquares.value);
+      wantedNumberOfSquares = inputSquares.value;
+      numberOfSquares = wantedNumberOfSquares * wantedNumberOfSquares;
+      createGrid(numberOfSquares);
+    });
   });
 });
